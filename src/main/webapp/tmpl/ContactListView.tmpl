@@ -1,0 +1,62 @@
+<script id="ContactListView" type="text/html">
+	<div class="ContactListView">
+	<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <div class="collapse navbar-collapse">
+		      <ul class="nav navbar-nav navbar-right">
+		        <li>
+		        	<a href="#" class="btn-refresh">refresh</a>
+		        </li>
+		        <li>
+		        	<a href="#" class="btn-new-contact">add new </a>
+		        </li>
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Select Group <span class="caret"></span></a>
+		          <ul class="dropdown-menu" role="menu">
+		          	<li><a href="#">All</a></li>
+		          	{{#each data.groupList}}
+		          		<li><a href="#">{{name}}</a></li>
+		          	{{/each}}
+		          </ul>
+		        </li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+	</nav>
+		<div class="contact-list-view">
+			<table class="table">
+				<thead>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Street</th>
+					<th>City</th>
+					<th>Country</th>
+					<th></th>
+				</thead>
+				<tbody>
+					{{#each data.contactList}}
+					<tr data-item-id="{{id}}">
+						<td><a href="#" class="btn-modify-contact">{{firstName}}</a></td>
+						<td><a href="#" class="btn-modify-contact">{{lastName}}</a></td>
+						<td>{{address.street}}</td>
+						<td>{{address.city}}</td>
+						<td>{{address.country}}</td>
+						<td>
+							<button type="button" class="btn btn-xs btn-defualt btn-manage-group">manage group</button>
+							<button type="button" class="btn btn-xs btn-danger btn-delete-contact">delete</button>
+						</td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</script>
+<script id="GroupDropDownList">
+	<ul class="dropdown-menu GroupDropDownList" role="menu">
+		          	<li data-groupid="0"><a href="#" class="contact-group-selector">All</a></li>
+		          	{{#each data.groupList}}
+		          		<li data-groupid="{{id}}"><a href="#" class="contact-group-selector">{{name}}</a></li>
+		          	{{/each}}
+	</ul>
+</script>

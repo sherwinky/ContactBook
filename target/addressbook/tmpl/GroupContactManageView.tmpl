@@ -1,0 +1,46 @@
+<script id="GroupContactManageView" type="text/html">
+<div class="GroupContactManageView">
+
+	<div class="panel panel-primary">
+	 <div class="panel-heading">
+    	<h3 class="panel-title">Not selected</h3>
+       <input type="hidden" id="contactid_container" name="contactid.container" value="{{data.contactid}}"/>
+  	</div>
+  		<div class="panel-body">
+    		<table class="table">
+    			<tbody>
+    				{{#each data.notSelectedGroups}}
+    					<tr data-groupid="{{id}}" data-contactid="{{data.contactid}}">
+    						<td>{{name}}</td>
+    						<td class="col-md-2"><button type="button" class="btn btn-xs btn-defualt btn-select-group">add group</button></td>
+    					</tr>
+    				{{/each}}
+    			</tbody>
+    		</table>
+  		</div>
+	</div>
+	<div class="panel panel-primary">
+	 <div class="panel-heading">
+    	<h3 class="panel-title">selected</h3>
+  	</div>
+  		<div class="panel-body">
+    		<table class="table">
+    			<tbody>
+    				{{#each data.selectedGroups}}
+    					<tr data-groupid="{{id}}">
+    						<td>
+                  {{name}}
+                  {{#each groupContact}}
+                    <input type="hidden" class="cls-group-contact-id" value="{{id}}"/>
+                  {{/each}}
+                </td>
+    						<td class="col-md-2"><button type="button" class="btn btn-xs btn-danger btn-remove-group">remove</button></td>
+    					</tr>
+    				{{/each}}
+    			</tbody>
+    		</table>
+  		</div>
+	</div>
+
+</div>
+</script>

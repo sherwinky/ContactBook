@@ -1,0 +1,30 @@
+<script id="GroupListView" type="text/html">
+	<div class="GroupListView">
+	<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <div class="collapse navbar-collapse">
+		      <ul class="nav navbar-nav navbar-right">
+		       	<li>
+		        	<a href="#" class="btn-refresh">refresh</a>
+		        </li>
+		        <li><a href="#" class="btn-new-group">add new</a></li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+	</nav>
+		<div class="group-list-view">
+			<table class="table">
+				<thead>
+					<th>Name</th>
+				</thead>
+				<tbody>
+					{{#each data.groupList}}
+					<tr data-item-id="{{id}}">
+						<td><a href="#" class="btn-modify-group">{{name}}</a></td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</script>
