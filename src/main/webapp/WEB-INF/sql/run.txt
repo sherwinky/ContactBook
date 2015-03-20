@@ -1,0 +1,2 @@
+psql -h localhost -p 5432 -U postgres -d postgres -a -f 0_createdb.sql
+psql -h localhost -p 5432 -U addr_user -d address_db -a -f 1_createtable
